@@ -8,8 +8,9 @@ import shutil
 pluginsKey = "GRAFANA_PLUGINS"
 pluginsVolume = "/opt/plugins"
 
+
 class ZipFileWithPermissions(zipfile.ZipFile):
-""" Custom ZipFile class handling file permissions. """
+    """ Custom ZipFile class handling file permissions. """
     def _extract_member(self, member, targetpath, pwd):
         if not isinstance(member, zipfile.ZipInfo):
             member = self.getinfo(member)
