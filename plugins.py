@@ -49,8 +49,8 @@ def extractPlugin(file_name):
 def installPlugin(plugin):
     try:
         file_name = downloadPlugin(plugin)
-    except:
-        print("Error downloading %s:%s" % plugin)
+    except Exception as err:
+        print("Error downloading %s:%s: %s" % (*plugin, err))
     else:
         extractPlugin(file_name)
 
