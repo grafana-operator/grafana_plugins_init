@@ -1,12 +1,17 @@
 ORG=integreatly
 PROJECT=grafana_plugins_init
 REG=quay.io
-TAG=0.0.4
+TAG=0.0.5
 PKG=github.com/integr8ly/grafana_plugins_init
 
 .PHONY: image/build
 image/build:
 	docker build -t ${REG}/${ORG}/${PROJECT}:${TAG} .
+
+# Build and push a multi-architecture docker image
+.PHONY: image/buildx
+image/buildx:
+	docker buildx build --platform linux/amd64,linux/arm64,linux/s390x --push -t ${REG}/${ORG}/${PROJECT}:${TAG} .
 
 .PHONY: image/push
 image/push:
