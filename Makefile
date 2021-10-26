@@ -1,8 +1,8 @@
-ORG=integreatly
+ORG=grafana-operator
 PROJECT=grafana_plugins_init
 REG=quay.io
 TAG=0.0.5
-PKG=github.com/integr8ly/grafana_plugins_init
+PKG=github.com/grafana-operator/grafana_plugins_init
 
 .PHONY: image/build
 image/build:
