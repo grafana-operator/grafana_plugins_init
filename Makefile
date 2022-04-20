@@ -1,7 +1,7 @@
 ORG=grafana-operator
 PROJECT=grafana_plugins_init
 REG=quay.io
-TAG=0.0.5
+TAG=0.0.6
 PKG=github.com/grafana-operator/grafana_plugins_init
 
 .PHONY: image/build
