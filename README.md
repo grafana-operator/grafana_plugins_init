@@ -22,5 +22,5 @@ export GRAFANA_PLUGINS="grafana-clock-panel:1.0.1,grafana-simple-json-datasource
 For Custom Plugins/urls
 
 ```shell
-export GRAFANA_PLUGINS="url:https://grafana.com/api/plugins/digiapulssi-breadcrumb-panel/versions/latest"
+export GRAFANA_PLUGINS="url:https://grafana.com/api/plugins/grafana-simple-json-datasource_latest"
 ```
