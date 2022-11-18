@@ -44,7 +44,7 @@ def getPlugins():
                     name = f"/tmp/{parts[0]}_{parts[1]}.zip"
             elif len(parts) == 1:
                 plugin_url = f"https://grafana.com/api/plugins/{parts[0]}/versions/latest/download?os={OS}&arch={ARCH}"
-                name = f"/tmp/{parts[0]}_lastest.zip"
+                name = f"/tmp/{parts[0]}_latest.zip"
             else:
                 print("Invalid syntax (version missing?): " + plugin)
 
