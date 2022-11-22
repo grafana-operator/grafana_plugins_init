@@ -18,3 +18,9 @@ To test that the python script works you need to set a environment variable.
 ```shell
 export GRAFANA_PLUGINS="grafana-clock-panel:1.0.1,grafana-simple-json-datasource:1.3.5"
 ```
+
+For Custom Plugins/urls
+
+```shell
+export GRAFANA_PLUGINS="url:https://grafana.com/api/plugins/grafana-simple-json-datasource_latest"
+```
