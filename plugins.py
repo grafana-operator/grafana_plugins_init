@@ -32,13 +32,13 @@ def getPlugins():
     if pluginsKey in os.environ and not (not os.environ[pluginsKey]):
         plugins = os.environ[pluginsKey].split(",")
         for plugin in plugins:
-            parts = plugin.split(":",1)
+            parts = plugin.split(":", 1)
             plugin_url = ""
             name = ""
             if len(parts) == 2:
                 if parts[0] == "url":
-                    plugin_url= parts[1]
-                    name = "/tmp/%s.zip" % plugin_url.rsplit('/', 1)[-1]
+                    plugin_url = parts[1]
+                    name = "/tmp/%s.zip" % plugin_url.rsplit("/", 1)[-1]
                 else:
                     plugin_url = f"https://grafana.com/api/plugins/{parts[0]}/versions/{parts[1]}/download?os={OS}&arch={ARCH}"
                     name = f"/tmp/{parts[0]}_{parts[1]}.zip"
@@ -53,7 +53,7 @@ def getPlugins():
 
 
 def downloadPlugin(plugin):
-    url,file_name = plugin
+    url, file_name = plugin
     print(f"downloading {url}")
     with urllib.request.urlopen(url) as response, open(file_name, "wb") as out_file:
         shutil.copyfileobj(response, out_file)
